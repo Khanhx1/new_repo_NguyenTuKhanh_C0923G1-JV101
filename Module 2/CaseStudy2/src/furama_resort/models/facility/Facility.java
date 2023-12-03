@@ -5,13 +5,13 @@ private String codeService;
 private String nameService;
 private Double usageArea;
 private Long rentalCost;
-private Long maximumPeople;
+private Integer maximumPeople;
 private String typeOfRental;
 
     public Facility() {
     }
 
-    public Facility(String codeService, String nameService, Double usageArea, Long rentalCost, Long maximumPeople, String typeOfRental) {
+    public Facility(String codeService, String nameService, Double usageArea, Long rentalCost, Integer maximumPeople, String typeOfRental) {
         this.codeService = codeService;
         this.nameService = nameService;
         this.usageArea = usageArea;
@@ -52,11 +52,11 @@ private String typeOfRental;
         this.rentalCost = rentalCost;
     }
 
-    public Long getMaximumPeople() {
+    public Integer getMaximumPeople() {
         return maximumPeople;
     }
 
-    public void setMaximumPeople(Long maximumPeople) {
+    public void setMaximumPeople(Integer maximumPeople) {
         this.maximumPeople = maximumPeople;
     }
 

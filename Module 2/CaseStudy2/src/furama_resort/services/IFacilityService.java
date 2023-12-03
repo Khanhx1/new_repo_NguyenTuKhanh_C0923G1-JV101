@@ -1,4 +1,7 @@
 package furama_resort.services;
 
-public interface IFacilityService extends IService{
+import furama_resort.models.facility.Facility;
+
+public interface IFacilityService extends IService<Facility> {
+
 }

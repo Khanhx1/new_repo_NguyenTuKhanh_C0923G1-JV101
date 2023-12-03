@@ -5,7 +5,7 @@ import furama_resort.models.facility.Facility;
 public class House extends Facility {
     private String roomStandard;
     private Integer numberOfFloors;
-    public House(String codeService, String nameService, Double usageArea, Long rentalCost, Long maximumPeople, String typeOfRental, String roomStandard, Integer numberOfFloors) {
+    public House(String codeService, String nameService, Double usageArea, Long rentalCost, Integer maximumPeople, String typeOfRental, String roomStandard, Integer numberOfFloors) {
         super(codeService, nameService, usageArea, rentalCost, maximumPeople,typeOfRental);
         this.roomStandard = roomStandard;
         this.numberOfFloors = numberOfFloors;

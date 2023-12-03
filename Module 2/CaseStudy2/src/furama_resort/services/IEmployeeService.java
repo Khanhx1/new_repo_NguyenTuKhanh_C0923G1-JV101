@@ -1,4 +1,9 @@
 package furama_resort.services;
 
-public interface IEmployeeService extends IService{
+import furama_resort.models.person.Employee;
+
+import java.util.List;
+
+public interface IEmployeeService extends IService<Employee>{
+
 }

@@ -1,4 +1,6 @@
 package furama_resort.services;
 
-public interface ICustomerService extends IService{
+import furama_resort.models.person.Customer;
+
+public interface ICustomerService extends IService<Customer> {
 }

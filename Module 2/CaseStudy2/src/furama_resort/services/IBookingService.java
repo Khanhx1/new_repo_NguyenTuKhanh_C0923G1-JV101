@@ -1,4 +1,6 @@
 package furama_resort.services;
 
-public interface IBookingService extends IService{
+import furama_resort.models.booking.Booking;
+
+public interface IBookingService extends IService<Booking>{
 }

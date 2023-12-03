@@ -1,6 +1,6 @@
 package furama_resort.views;
 
-import furama_resort.utils.NumberException;
+import furama_resort.utils.exception.NumberException;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class DisplayMainMenu {
             System.out.println("5. Promotion Management");
             System.out.println("6. Exit");
             System.out.println("--------Enter your option-------");
-           choice =  numberException.inputNumberException();
+           choice =  numberException.inputIntegerNumberException();
             switch (choice) {
                 case 1:
                     managementFunction.manageEmployee();
@@ -38,6 +38,8 @@ public class DisplayMainMenu {
                     break;
                 case 6:
                     System.exit(0);
+                default:
+                    System.out.println("try again");
             }
         } while (true);
     }
