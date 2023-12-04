@@ -30,4 +30,13 @@ public class EmployeeService implements IEmployeeService {
         employeeRepository.remove(inputCode);
     }
 
+    @Override
+    public void edit(String newValue, int editPropertyChoice, String inputCode) {
+        employeeRepository.edit(newValue, editPropertyChoice, inputCode);
+    }
+
+    @Override
+    public List<Employee> findByName(String findByName) {
+        return employeeRepository.findByName(findByName);
+    }
 }

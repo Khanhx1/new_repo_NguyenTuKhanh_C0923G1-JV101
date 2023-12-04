@@ -8,6 +8,7 @@ public class DisplayMainMenu {
     private static Scanner scanner = new Scanner(System.in);
     private static ManagementFunction managementFunction = new ManagementFunction();
     private static NumberException numberException = new NumberException();
+    private static CustomerManagement customerManagement = new CustomerManagement();
     private static int choice;
     public static void main(String[] args) {
         do {
@@ -25,7 +26,7 @@ public class DisplayMainMenu {
                     managementFunction.manageEmployee();
                     break;
                 case 2:
-                    managementFunction.manageCustomer();
+                    customerManagement.manageCustomer();
                     break;
                 case 3:
                     managementFunction.manageFacility();

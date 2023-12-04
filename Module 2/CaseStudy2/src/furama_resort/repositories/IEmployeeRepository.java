@@ -12,4 +12,8 @@ public interface IEmployeeRepository extends IRepository{
     Employee findByCode(String inputCode);
 
     void remove(String inputCode);
+
+    void edit(String newValue, int editPropertyChoice, String inputCode);
+
+    List<Employee> findByName(String findByName);
 }

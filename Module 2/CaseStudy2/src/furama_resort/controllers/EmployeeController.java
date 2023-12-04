@@ -24,4 +24,12 @@ public class EmployeeController {
     public void remove(String inputCode) {
         employeeService.remove(inputCode);
     }
+
+    public void edit(String newValue, int editPropertyChoice, String inputCode) {
+        employeeService.edit(newValue, editPropertyChoice, inputCode);
+    }
+
+    public List<Employee> findByName(String findByName) {
+        return employeeService.findByName(findByName);
+    }
 }
