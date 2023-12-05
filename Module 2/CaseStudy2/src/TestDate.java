@@ -13,7 +13,5 @@ public class TestDate {
         System.out.println("years: " + period.getYears());
         System.out.println("months: " + period.getMonths());
         System.out.println("days: " + period.getDays());
-        System.out.println("ool");
-        System.out.println("kkk");
     }
 }

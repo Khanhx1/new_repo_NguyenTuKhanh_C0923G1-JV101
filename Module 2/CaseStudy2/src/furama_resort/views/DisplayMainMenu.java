@@ -9,6 +9,7 @@ public class DisplayMainMenu {
     private static ManagementFunction managementFunction = new ManagementFunction();
     private static NumberException numberException = new NumberException();
     private static CustomerManagement customerManagement = new CustomerManagement();
+    private static FacilityManagement facilityManagement = new FacilityManagement();
     private static int choice;
     public static void main(String[] args) {
         do {
@@ -29,7 +30,7 @@ public class DisplayMainMenu {
                     customerManagement.manageCustomer();
                     break;
                 case 3:
-                    managementFunction.manageFacility();
+                    facilityManagement.manageFacility();
                     break;
                 case 4:
                     managementFunction.manageBooking();
