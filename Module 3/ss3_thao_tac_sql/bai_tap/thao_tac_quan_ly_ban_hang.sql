@@ -84,4 +84,4 @@ JOIN
 JOIN 
     product ON order_detail.product_id = product.product_id
 GROUP BY 
-    order_product.order_id, order_product.order_date, order_product.order_total_price;
+    order_product.order_id, order_product.order_date;
