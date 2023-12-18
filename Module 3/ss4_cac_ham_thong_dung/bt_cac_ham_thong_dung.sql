@@ -39,46 +39,45 @@ CREATE TABLE Mark
 );
 
 INSERT INTO class_room(Class_id, Class_name, Start_date, Status_class)
-VALUES (1, 'A1', '2008-12-20', 1),
-       (2, 'A2', '2008-12-22', 1),
-       (3, 'B3', current_date, 0);
+VALUES   (1, 'A1', '2008-12-20', 1),
+         (2, 'A2', '2008-12-22', 1),
+         (3, 'B3', current_date, 0);
        
 INSERT INTO Student (Student_id ,Student_name, Address, Phone, Status_student, Class_id)
-VALUES 	(1 ,'Hung', 'Ha Noi', '0912113113', 1, 1),
-		(2 ,'Hoa', 'Hai phong',null, 1, 1),
-        (3 ,'Manh', 'HCM', '0123123123', 0, 2);
+VALUES 	 (1 ,'Hung', 'Ha Noi', '0912113113', 1, 1),
+		 (2 ,'Hoa', 'Hai phong',null, 1, 1),
+         (3 ,'Manh', 'HCM', '0123123123', 0, 2);
         
 INSERT INTO Subject_info( Sub_id, Sub_name, Credit, Status_subject)
-VALUES 	(1, 'CF', 5, 1),
+VALUES  (1, 'CF', 5, 1),
 		(2, 'C', 6, 1),
 		(3, 'HDJ', 5, 1),
-		(4, 'RDBMS', 10, 1);
+	    (4, 'RDBMS', 10, 1);
         
 INSERT INTO Mark (Sub_id, Student_id, Mark, Exam_times)
-VALUES 	(1, 1, 8, 1),
-		(1, 2, 10, 2),
-		(2, 1, 12, 1);
+VALUES 	 (1, 1, 8, 1),
+		 (1, 2, 10, 2),
+		 (2, 1, 12, 1);
         
-select Student_name 
-from student
-where Student_name like 'h%';
-
+-- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
+        
 select *
-from class_room
-having month(Start_date) = 12;
+from subject_info
+where Credit = (select max(Credit) from subject_info);
 
-select * 
-from Subject_info
-where Credit between 3 and 5;
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 
-set sql_safe_updates = 0;
+select subject_info.Sub_id, subject_info.Sub_name, subject_info.Credit, subject_info.Status_subject
+from subject_info
+join mark on mark.Sub_id = subject_info.Sub_id
+where mark.Mark = (select max(Mark) from mark);
 
-update Student
-set Class_id = 2
-where Student_name = 'Hung';
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
 
-set sql_safe_updates = 1;
-
-select Student.Student_name, Subject_info.Sub_name, Mark.Mark
-from Student, Subject_info, Mark
-order by Mark desc, Student_name asc;
+select student.Student_id, student.Student_name, student.Address, student.Phone, student.Status_student, student.Class_id, avg(mark.Mark) as average
+from student
+join mark on mark.Student_id = student.Student_id
+group by student.Student_id, student.Student_name, student.Address, student.Phone, student.Status_student, student.Class_id
+order by average desc;
+        
+        
