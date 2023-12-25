@@ -1,4 +1,10 @@
-/* 
-.flex-box {
-    display: flex;
-} */
+.padding-0 {
+    padding: 0px !important;
+}
+.blue-1-text {
+color: rgb(30,131,203) !important;
+font-weight: 500;
+}
+.black-text {
+    color: black !important;
+}
