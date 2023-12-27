@@ -25,7 +25,15 @@ public class Test1 extends HttpServlet {
         customerList.add(new Customer("Tran Dang Khoa", "1975-08-28", "Da Nang", pathImage));
         customerList.add(new Customer("Nguyen Dinh Thi", "1986-05-11", "Hue", pathImage));
 
+        String headingTable = " <tr>" +
+                "<th>Ten</th>" +
+                "<th>Ngay sinh</th>" +
+                "<th>Dia chi</th>" +
+                "<th>Anh</th>" +
+                "</tr>";
+
         req.setAttribute("cList", customerList);
+        req.setAttribute("heading",headingTable);
         requestDispatcher.forward(req, resp);
 
 

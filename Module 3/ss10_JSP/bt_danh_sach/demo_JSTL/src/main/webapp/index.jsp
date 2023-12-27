@@ -8,12 +8,7 @@
 <body>
 
 <table border="1" style="border-collapse: collapse">
-    <tr>
-        <th>Ten</th>
-        <th>Ngay sinh</th>
-        <th>Dia chi</th>
-        <th>Anh</th>
-    </tr>
+   ${heading}
     <c:forEach items="${cList}" var="i">
         <tr>
             <td>${i.name}</td>
